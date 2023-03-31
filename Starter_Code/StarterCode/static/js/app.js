@@ -21,7 +21,7 @@ function init() {
         // adding samples to dropdown menu
         names.forEach((id) => {
 
-            // Value of id for each loop
+            // id for each loop
             console.log(id);
             dropdown.append("option")
             .text(id)
@@ -87,7 +87,7 @@ function buildBarChart(sample) {
 
         console.log(sample_values, otu_ids, otu_labels);
 
-        // top 10 items in descending order
+        // Items in descending order
         let xticks = sample_values.slice(0,10).reverse();
         let yticks = otu_ids.slice(0,10).map(id => 'OTU ${id}').reverse();
         let labels = otu_labels.slice(0,10).reverse();
@@ -106,7 +106,7 @@ function buildBarChart(sample) {
             title: "top 10 OTUs"
         };
 
-        // plotly barchart
+        // barchart
         Plotly.newPlot("bar", [trace], layout);
 
     });
@@ -151,7 +151,7 @@ function buildBubbleChart(sample) {
             xaxis: {title: "OTU ID"},
         };
         
-        // plotly to plot bubble chart
+        // bubble chart
         Plotly.newPlot("bubble", [trace2], layout)
     });
 };
